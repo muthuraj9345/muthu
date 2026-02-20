@@ -1,0 +1,19 @@
+const express = require("express");
+const app = express();
+app.use(express.json());
+app.use(express.static("../"));
+
+let reports = [];
+
+app.get("/api/reports", (req, res) => {
+  res.json(reports);
+});
+
+app.post("/api/reports", (req, res) => {
+  reports.push(req.body);
+  res.json({ message: "Report added" });
+});
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
