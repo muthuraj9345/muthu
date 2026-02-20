@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CleanCity - Report Waste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>CleanCity - Smart Waste Reporting</h1>
+
+<form id="reportForm">
+  <input type="file" id="photo" required><br><br>
+
+  <select id="wasteType">
+    <option>Plastic</option>
+    <option>Organic</option>
+    <option>Glass</option>
+    <option>Metal</option>
+  </select><br><br>
+
+  <textarea id="description" placeholder="Describe issue"></textarea><br><br>
+
+  <button type="submit">Submit Report</button>
+</form>
+
+<h2>My Reports</h2>
+<div id="reports"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
