@@ -1,0 +1,25 @@
+const adminReports = document.getElementById("adminReports");
+let reports = JSON.parse(localStorage.getItem("reports")) || [];
+
+function displayAdminReports() {
+  adminReports.innerHTML = "";
+  reports.forEach((report, index) => {
+    adminReports.innerHTML += `
+      <div>
+        <p><b>Type:</b> ${report.type}</p>
+        <p>${report.desc}</p>
+        <p>Status: ${report.status}</p>
+        <button onclick="markCleaned(${index})">Mark Cleaned</button>
+        <hr>
+      </div>
+    `;
+  });
+}
+
+function markCleaned(index) {
+  reports[index].status = "Cleaned";
+  localStorage.setItem("reports", JSON.stringify(reports));
+  displayAdminReports();
+}
+
+displayAdminReports();
